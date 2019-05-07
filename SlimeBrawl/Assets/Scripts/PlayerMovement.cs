@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     //Public
-
     public GameObject PlayerDummy;
     public GameObject RestartButton;
     public GameObject PlayerParent;
@@ -30,12 +29,10 @@ public class PlayerMovement : MonoBehaviour
 
     public int score;
    
-
-
     //Private
-    private Rigidbody2D playerbody;
+    private Rigidbody2D rb;
 
-    private Animator anim;
+    private Animator animator;
 
     private AudioSource CoinVoice;
     private AudioSource JumpVoice;
@@ -48,14 +45,9 @@ public class PlayerMovement : MonoBehaviour
     private float gravityStore;
     private float Jumplimit = 0;
 
-    private int scoreminus;
-
     private bool isleft = true;
     private bool isjump = false;
     private bool onLadder = false;
-
-  
-
 
     // Use this for initialization
     void Start()
@@ -64,9 +56,9 @@ public class PlayerMovement : MonoBehaviour
         //PlayerCheck = GameObject.FindGameObjectWithTag("Checkpoint");
         //PlayerCheck2 = GameObject.FindGameObjectWithTag("Checkpoint2");
         //CheckpointPosition();
-        playerbody = GetComponent<Rigidbody2D>();
-        gravityStore = playerbody.gravityScale;
-        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        gravityStore = rb.gravityScale;
+        animator = GetComponent<Animator>();
         //  JumpVoice = GetComponent<AudioSource>();
         //TextVoice = GetComponent<AudioSource>();
         // CoinVoice = GetComponent<AudioSource>();
@@ -80,8 +72,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Climb", 0f);
-        anim.SetFloat("Walk", 0f);
+        animator.SetFloat("Climb", 0f);
+        animator.SetFloat("Walk", 0f);
 
         PlayerMovements();
     }
@@ -97,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
                 isleft = false;
 
             }
-            anim.SetFloat("Walk", 0.2f);
+            animator.SetFloat("Walk", 0.2f);
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
@@ -108,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.Rotate(new Vector3(0, 180, 0));
                 isleft = true;
             }
-            anim.SetFloat("Walk", 0.2f);
+            animator.SetFloat("Walk", 0.2f);
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
@@ -118,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightShift) && isPlayer2 || Input.GetKey(KeyCode.Space)  && !isPlayer2)
             {
                 // JumpVoice.PlayOneShot(JumpBGM);
-                playerbody.velocity = (new Vector2(0, JumpHeight));
+                rb.velocity = (new Vector2(0, JumpHeight));
                 Jumplimit = 1.0f;
                 isjump = true;
             }
@@ -127,26 +119,25 @@ public class PlayerMovement : MonoBehaviour
         //Mid-Air
         else if (isjump == true)
         {
-            if (playerbody.velocity.y != 0)
+            if (rb.velocity.y != 0)
             {
-                playerbody.gravityScale = playerbody.gravityScale + 0.1f;
+                rb.gravityScale = rb.gravityScale + 0.1f;
             }
         }
     }
-   
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Ground")
         {
             isjump = false;
-            playerbody.gravityScale = gravityStore;
+            rb.gravityScale = gravityStore;
             Jumplimit = 0;
         }
         if (col.gameObject.tag == "Limit")
         {
-            anim.SetTrigger("Die");
-            playerbody.velocity = (new Vector2(0, JumpHeight));
+            animator.SetTrigger("Die");
+            rb.velocity = (new Vector2(0, JumpHeight));
             //DestroyedVoice.PlayOneShot(DestroyedBGM);
             // Instantiate(PlayerDummy, transform.position, transform.rotation);
             // yield return new WaitForSeconds(1);
