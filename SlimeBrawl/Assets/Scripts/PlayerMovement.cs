@@ -1,118 +1,165 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.UIElements.GraphView;
-using UnityEngine;
-
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Vector2 position;
-    public Vector2 jump;
+    //Public
+
+    public GameObject PlayerDummy;
+    public GameObject RestartButton;
+    public GameObject PlayerParent;
+    public GameObject PlayerCheck;
+    public GameObject PlayerCheck2;
+
+    public AudioClip CheckSE;
+    public AudioClip CoinBGM;
+    public AudioClip TextBGM;
+    public AudioClip DestroyedBGM;
+    public AudioClip KillBGM;
+    public AudioClip JumpBGM;
+
+    public Text ScoreText;
+
+    public bool isPlayer2;
+
     public float speed;
-    public Animator animator;
-    private bool isAttacking;
-    private bool isLeft = false;
-    private bool isjump;
+    public float climbSpeed;
+    public float JumpHeight = 0;
 
-    public int JumpHeight;
+    public int score;
+   
 
-    // Start is called before the first frame update
+
+    //Private
+    private Rigidbody2D playerbody;
+
+    private Animator anim;
+
+    private AudioSource CoinVoice;
+    private AudioSource JumpVoice;
+    private AudioSource CheckVoice;
+    private AudioSource TextVoice;
+    private AudioSource DestroyedVoice;
+    private AudioSource KillVoice;
+
+    private float climbVelocity;
+    private float gravityStore;
+    private float Jumplimit = 0;
+
+    private int scoreminus;
+
+    private bool isleft = true;
+    private bool isjump = false;
+    private bool onLadder = false;
+
+  
+
+
+    // Use this for initialization
     void Start()
     {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        position = new Vector2(0.0f, 0.0f);
-        jump = new Vector2(0.0f, 0.0f);
-        position.x = 1.0f;
-        jump.y = 5.0f;
-        isAttacking = false;
+
+        //PlayerCheck = GameObject.FindGameObjectWithTag("Checkpoint");
+        //PlayerCheck2 = GameObject.FindGameObjectWithTag("Checkpoint2");
+        //CheckpointPosition();
+        playerbody = GetComponent<Rigidbody2D>();
+        gravityStore = playerbody.gravityScale;
+        anim = GetComponent<Animator>();
+        //  JumpVoice = GetComponent<AudioSource>();
+        //TextVoice = GetComponent<AudioSource>();
+        // CoinVoice = GetComponent<AudioSource>();
+        //   DestroyedVoice = GetComponent<AudioSource>();
+        //  KillVoice = GetComponent<AudioSource>();
+        //  CheckVoice = GetComponent<AudioSource>();
+
+        onLadder = false;
     }
 
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        playerMovement();
-        playerAttack();
+        anim.SetFloat("Climb", 0f);
+        anim.SetFloat("Walk", 0f);
+
+        PlayerMovements();
     }
 
-    void playerMovement()
+
+    void PlayerMovements()
     {
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.RightArrow) && isPlayer2 || Input.GetKey(KeyCode.D) && !isPlayer2)
         {
-            animator.SetFloat("Walk", 1.0f);
-            //rb.AddForce(position * speed);
-            if (isLeft == true)
+            if (isleft == true)
             {
                 transform.Rotate(new Vector3(0, 180, 0));
-                isLeft = false;
+                isleft = false;
 
             }
-            transform.Translate(position * speed * Time.deltaTime);
+            anim.SetFloat("Walk", 0.2f);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
-        else if (Input.GetKey("a"))
+
+        else if (Input.GetKey(KeyCode.LeftArrow) && isPlayer2 || Input.GetKey(KeyCode.A)  && !isPlayer2)
         {
-            animator.SetFloat("Walk", 1.0f);
-            //rb.AddForce((-1 * position) * speed);
-            if (isLeft == false)
+            if (isleft == false)
             {
                 transform.Rotate(new Vector3(0, 180, 0));
-                isLeft = true;
+                isleft = true;
             }
-            transform.Translate(position * speed * Time.deltaTime);
-
+            anim.SetFloat("Walk", 0.2f);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
+
+        //On The Ground
         if (isjump == false)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.RightShift) && isPlayer2 || Input.GetKey(KeyCode.Space)  && !isPlayer2)
             {
                 // JumpVoice.PlayOneShot(JumpBGM);
-                rb.velocity = (new Vector2(0, JumpHeight));
-               // Jumplimit = 1.1f * JumpHeight / 5;
+                playerbody.velocity = (new Vector2(0, JumpHeight));
+                Jumplimit = 1.0f;
                 isjump = true;
+            }
+
+        }
+        //Mid-Air
+        else if (isjump == true)
+        {
+            if (playerbody.velocity.y != 0)
+            {
+                playerbody.gravityScale = playerbody.gravityScale + 0.1f;
             }
         }
     }
-
-    void playerAttack()
-    {
-        if (Input.GetKeyDown("f") && isAttacking == false)
-        {
-            isAttacking = true;
-            //animator.SetBool("isAttacking", isAttacking);
-            isAttacking = false;
-        }
-
-    }
+   
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        //if (col.gameObject.tag == "musuh")
-        //{
-        //    anim.SetTrigger("die");
-        //    DestroyedVoice.PlayOneShot(DestroyedBGM);
-        //    Instantiate(PlayerDummy, transform.position, transform.rotation);
-        //    RestartButton.SetActive(true);
-        //    Time.timeScale = 0; ;
         if (col.gameObject.tag == "Ground")
         {
             isjump = false;
+            playerbody.gravityScale = gravityStore;
+            Jumplimit = 0;
         }
-        //if (col.gameObject.tag == "Limit")
-        //{
-        //    anim.SetTrigger("Die");
-        //    playerbody.velocity = (new Vector2(0, JumpHeight));
-        //    //DestroyedVoice.PlayOneShot(DestroyedBGM);
-        //    // Instantiate(PlayerDummy, transform.position, transform.rotation);
-        //    // yield return new WaitForSeconds(1);
-        //    // RestartButton.SetActive(true);
-        //    //Time.timeScale = 0; 
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //}
+        if (col.gameObject.tag == "Limit")
+        {
+            anim.SetTrigger("Die");
+            playerbody.velocity = (new Vector2(0, JumpHeight));
+            //DestroyedVoice.PlayOneShot(DestroyedBGM);
+            // Instantiate(PlayerDummy, transform.position, transform.rotation);
+            // yield return new WaitForSeconds(1);
+            // RestartButton.SetActive(true);
+            //Time.timeScale = 0; 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-        
-    //}
-
 }
+
+
+
+
+
+
+
