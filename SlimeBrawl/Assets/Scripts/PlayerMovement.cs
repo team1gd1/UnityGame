@@ -74,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetFloat("Climb", 0f);
         animator.SetFloat("Walk", 0f);
-
         PlayerMovements();
     }
 
