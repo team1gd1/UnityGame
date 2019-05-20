@@ -17,7 +17,6 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isAttacking = false;
         playerAttack();
     }
 
@@ -28,6 +27,5 @@ public class Attack : MonoBehaviour
             isAttacking = true;
             Anim.SetBool("isAttacking", isAttacking);
         }
-       
     }
 }

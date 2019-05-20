@@ -112,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = (new Vector2(0, JumpHeight));
                 Jumplimit = 1.0f;
                 isjump = true;
+                animator.SetBool("isJumping", isjump);
             }
 
         }
@@ -130,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             isjump = false;
+            animator.SetBool("isJumping", isjump);
             rb.gravityScale = gravityStore;
             Jumplimit = 0;
         }
