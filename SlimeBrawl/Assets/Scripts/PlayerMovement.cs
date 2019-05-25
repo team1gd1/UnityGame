@@ -85,8 +85,7 @@ public class PlayerMovement : MonoBehaviour
             if (isleft == true)
             {
                 transform.Rotate(new Vector3(0, 180, 0));
-                isleft = false;
-
+                isleft = false; 
             }
             animator.SetFloat("Walk", 0.2f);
             transform.Translate(Vector2.left * speed * Time.deltaTime);
