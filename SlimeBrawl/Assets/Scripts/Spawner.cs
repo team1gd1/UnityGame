@@ -22,6 +22,10 @@ public class Spawner : MonoBehaviour
 
     void weaponSpawner()
     {
-        Instantiate(rayGun, new Vector2(1, 1), Quaternion.identity);    
+        if (rayGunMax != 2)
+        {
+            Instantiate(rayGun, new Vector2(1, 1), Quaternion.identity);
+            rayGunMax++;
+        }
     }
 }

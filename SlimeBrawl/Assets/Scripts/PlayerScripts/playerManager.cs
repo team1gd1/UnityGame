@@ -10,7 +10,7 @@ public class playerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,11 +19,12 @@ public class playerManager : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Weapon")
         {
-            Debug.Log("Collided With Weapon");
+            weapon = collision.gameObject;
+            collision.gameObject.SetActive(false);
         }
     }
 }
