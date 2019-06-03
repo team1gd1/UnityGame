@@ -62,9 +62,9 @@ public class PlayerMovement : MonoBehaviour
         //  JumpVoice = GetComponent<AudioSource>();
         //TextVoice = GetComponent<AudioSource>();
         // CoinVoice = GetComponent<AudioSource>();
-        //   DestroyedVoice = GetComponent<AudioSource>();
-        //  KillVoice = GetComponent<AudioSource>();
-        //  CheckVoice = GetComponent<AudioSource>();
+        // DestroyedVoice = GetComponent<AudioSource>();
+        // KillVoice = GetComponent<AudioSource>();
+        // CheckVoice = GetComponent<AudioSource>();
 
         onLadder = false;
     }
