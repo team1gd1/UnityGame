@@ -7,24 +7,13 @@ public class PlayerHealth : MonoBehaviour
 {
     bool isDead = false;
     public Slider playerHealth;
-<<<<<<< HEAD:SlimeBrawl/Assets/Scripts/PlayerScripts/PlayerHealth.cs
-<<<<<<< HEAD:SlimeBrawl/Assets/Scripts/PlayerHealth.cs
-    public int startingHealth = 100;
-    public int currentHealth;
+
+    public float startingHealth = 100;
+    public float currentHealth;
     public GameObject player;
-=======
-    public float startingHealth = 100;
-    public float currentHealth;
-=======
-    public float startingHealth = 100;
-    public float currentHealth;
-
-    public bool inCircle = false;
->>>>>>> 44e0fde3c2c18f5a18433a5dd2ccb6b0632ce5ad:SlimeBrawl/Assets/Scripts/PlayerScripts/PlayerHealth.cs
 
     public bool inCircle = false;
 
->>>>>>> 44e0fde3c2c18f5a18433a5dd2ccb6b0632ce5ad:SlimeBrawl/Assets/Scripts/PlayerScripts/PlayerHealth.cs
     // Start is called before the first frame update
     void Start()
     {
