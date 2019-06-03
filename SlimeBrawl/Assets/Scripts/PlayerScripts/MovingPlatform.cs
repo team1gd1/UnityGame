@@ -3,21 +3,26 @@ using System.Collections;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public int PlatSpeed;
+    public int PlatSpeed = 2;
     public bool isRightPlat = true;
     public bool isVertical = false;
+    public Vector3 startingPosition;
+
+    public float maxMovement = 1.3f;
 
     Rigidbody2D Plat;
     // Use this for initialization
     void Start()
     {
         Plat = GetComponent<Rigidbody2D>();
+        startingPosition = gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         MovementPlat();
+        ChangeDirection();
     }
     void MovementPlat()
     {
@@ -46,6 +51,18 @@ public class MovingPlatform : MonoBehaviour
                 Plat.velocity = new Vector2(- PlatSpeed , 0);
                 //transform.Translate (Vector2.down * PlatSpeed * Time.deltaTime);
             }
+        }
+    }
+
+    void ChangeDirection()
+    {
+        if (gameObject.transform.localPosition.y > startingPosition.y + maxMovement) //|| gameObject.transform.localPosition.x > startingPosition.x + 50)
+        {
+            isRightPlat = false;
+        }
+        if (gameObject.transform.localPosition.y < startingPosition.y - maxMovement) //|| gameObject.transform.localPosition.x > startingPosition.x - 50)
+        {
+            isRightPlat = true;
         }
     }
 

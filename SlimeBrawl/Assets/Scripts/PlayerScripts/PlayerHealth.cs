@@ -8,9 +8,18 @@ public class PlayerHealth : MonoBehaviour
     bool isDead = false;
     public Slider playerHealth;
 
+<<<<<<< HEAD
     public float startingHealth = 100;
     public float currentHealth;
     public GameObject player;
+=======
+    public GameObject player;
+
+    public float startingHealth = 100;
+    public float currentHealth;
+
+
+>>>>>>> 918434b90890335c29146ff93782265e1b88fdaa
 
     public bool inCircle = false;
 
@@ -29,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= 1 * Time.deltaTime;
         }
+        playerHealth.value = currentHealth;
+       // playerHealth.value = currentHealth;
     }
 
     void takeDamage()
