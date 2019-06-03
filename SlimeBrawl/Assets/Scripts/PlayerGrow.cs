@@ -7,8 +7,8 @@ public class PlayerGrow : MonoBehaviour
 {
 
     public Slider playerSize;
-    public int startingSize = 100;
-    public int currentSize;
+    public float startingSize = 100;
+    public float currentSize;
     public GameObject player;
 
     // Start is called before the first frame update

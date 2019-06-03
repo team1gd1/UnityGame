@@ -1117,6 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1368142436}
+  player: {fileID: 643768141}
   startingHealth: 100
   currentHealth: 100
   inCircle: 0
@@ -2443,6 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1368142436}
+  player: {fileID: 0}
   startingHealth: 100
   currentHealth: 0
   inCircle: 0
