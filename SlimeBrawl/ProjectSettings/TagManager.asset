@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - PlatSpot
+  - Shrinking
   layers:
   - Default
   - TransparentFX

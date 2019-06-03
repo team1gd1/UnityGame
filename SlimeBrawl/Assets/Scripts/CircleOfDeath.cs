@@ -30,7 +30,7 @@ public class CircleOfDeath : MonoBehaviour
         {
             transform.localScale -= new Vector3(0.0001f * Time.deltaTime, 0.0001f * Time.deltaTime, 0);
         }
-        else if (transform.localScale.x <= 0.09f * startingScale.x)
+        else if (transform.localScale.x <= 0.0822f * startingScale.x)
         {
 
         }

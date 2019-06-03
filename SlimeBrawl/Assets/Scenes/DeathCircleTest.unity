@@ -1170,7 +1170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 23d7e2d7e9101f04db1eedfc0d14977d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 1231769235}
   m_Layer: 0
   m_Name: Shrinking
-  m_TagString: Untagged
+  m_TagString: Shrinking
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1303,7 +1303,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7db9621bc4a76bd4dac84000b8f18983, type: 3}
   m_Color: {r: 0.5849056, g: 0.56846666, b: 0.19037023, a: 0.50980395}
   m_FlipX: 0
@@ -2259,3 +2259,4 @@ MonoBehaviour:
   playerHealth: {fileID: 1368142436}
   startingHealth: 100
   currentHealth: 0
+  inCircle: 0
