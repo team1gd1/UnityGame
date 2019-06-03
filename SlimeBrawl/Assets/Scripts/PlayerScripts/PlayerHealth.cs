@@ -27,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= 1 * Time.deltaTime;
         }
+        playerHealth.value = currentHealth;
+       // playerHealth.value = currentHealth;
     }
 
     void takeDamage()
