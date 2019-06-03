@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider playerHealth;
     public int startingHealth = 100;
     public int currentHealth;
-
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
