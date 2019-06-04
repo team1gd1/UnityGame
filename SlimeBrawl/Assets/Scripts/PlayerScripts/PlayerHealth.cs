@@ -8,12 +8,10 @@ public class PlayerHealth : MonoBehaviour
     bool isDead = false;
     public Slider playerHealth;
 
-    public GameObject player;
 
     public float startingHealth = 100;
     public float currentHealth;
-
-
+    public GameObject player;
 
     public bool inCircle = false;
 

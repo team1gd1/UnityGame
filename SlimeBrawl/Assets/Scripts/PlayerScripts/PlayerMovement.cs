@@ -43,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float climbVelocity;
     private float gravityStore;
-    private float Jumplimit = 0;
+    //private float Jumplimit = 0;
 
     private bool isleft = true;
     private bool isjump = false;
-    private bool onLadder = false;
+   // private bool onLadder = false;
 
     // Use this for initialization
     void Start()
@@ -66,14 +66,14 @@ public class PlayerMovement : MonoBehaviour
         // KillVoice = GetComponent<AudioSource>();
         // CheckVoice = GetComponent<AudioSource>();
 
-        onLadder = false;
+       // onLadder = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Climb", 0f);
-        animator.SetFloat("Walk", 0f);
+      //  animator.SetFloat("Climb", 0f);
+       // animator.SetFloat("Walk", 0f);
         PlayerMovements();
     }
 
@@ -107,9 +107,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightShift) && isPlayer2 || Input.GetKey(KeyCode.Space)  && !isPlayer2)
             {
-                // JumpVoice.PlayOneShot(JumpBGM);
+                //JumpVoice.PlayOneShot(JumpBGM);
                 rb.velocity = (new Vector2(0, JumpHeight));
-                Jumplimit = 1.0f;
+                //Jumplimit = 1.0f;
                 isjump = true;
                 animator.SetBool("isJumping", isjump);
             }
@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
             isjump = false;
             animator.SetBool("isJumping", isjump);
             rb.gravityScale = gravityStore;
-            Jumplimit = 0;
+            //Jumplimit = 0;
         }
         if (col.gameObject.tag == "Limit")
         {

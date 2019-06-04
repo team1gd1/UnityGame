@@ -6,7 +6,7 @@ public class Attack : MonoBehaviour
 {
     private Animator Anim;
     private bool isAttacking;
-    private bool isIdle;
+    //private bool isIdle;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Attack : MonoBehaviour
     void Update()
     {
         playerAttack();
-        Anim.SetBool("isIdle", isIdle);
+       // Anim.SetBool("isIdle", isIdle);
     }
 
     void playerAttack()
