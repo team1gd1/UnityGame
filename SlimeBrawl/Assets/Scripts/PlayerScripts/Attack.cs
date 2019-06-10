@@ -19,6 +19,7 @@ public class Attack : MonoBehaviour
     void Update()
     {
         playerAttack();
+        //EndAttack();
        // Anim.SetBool("isIdle", isIdle);
     }
 
@@ -28,6 +29,13 @@ public class Attack : MonoBehaviour
         {
             isAttacking = true;
             Anim.SetBool("isAttacking", isAttacking);
+            
         }
+    }
+
+    void EndAttack()
+    {
+        isAttacking = false;
+        Anim.SetBool("isAttacking", isAttacking);
     }
 }

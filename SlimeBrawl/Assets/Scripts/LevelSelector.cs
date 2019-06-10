@@ -9,12 +9,15 @@ public class LevelSelector : MonoBehaviour
     public int SelectedLevel = 1;
     public Text LevelName;
     public GameObject LevelSelectorBG;
-
+    public Sprite[] previews;
+    public Image currentPreview;
+    public GameObject previewImage;
     private int MaxLevel = 2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentPreview = previewImage.GetComponent<Image>();
+        currentPreview.sprite = previews[0];
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class LevelSelector : MonoBehaviour
         if (SelectedLevel < MaxLevel ) //&& SelectedLevel >= SaveSystem.LoadData().i_UnlockedLevels)
         {
             SelectedLevel = SelectedLevel + 1;
+            currentPreview.sprite = previews[SelectedLevel - 1];
         }
     }
 
@@ -36,6 +40,7 @@ public class LevelSelector : MonoBehaviour
         if (SelectedLevel > 1)
         {
             SelectedLevel = SelectedLevel - 1;
+            currentPreview.sprite = previews[SelectedLevel - 1];
         }
     }
 
