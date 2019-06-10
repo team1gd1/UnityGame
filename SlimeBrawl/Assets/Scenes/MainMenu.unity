@@ -611,9 +611,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 417396988}
-  - component: {fileID: 417396989}
   - component: {fileID: 417396990}
   - component: {fileID: 417396987}
+  - component: {fileID: 417396991}
   m_Layer: 0
   m_Name: BGMusic
   m_TagString: BGM
@@ -732,19 +732,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &417396989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417396986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7506a7e6d3f2f4ba45e4ece9945257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 765357cd235197340a045dde7f2a810a, type: 2}
 --- !u!114 &417396990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,12 +744,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c0ed0a002070945984c0413cdcc1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!114 &417396991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417396986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1cbd6a707631c4fad09aec8eb4fd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &439414486
@@ -2424,6 +2415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123930371}
   - component: {fileID: 2123930372}
+  - component: {fileID: 2123930373}
   m_Layer: 5
   m_Name: Volume Slider
   m_TagString: Untagged
@@ -2500,7 +2492,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 417396989}
+      - m_Target: {fileID: 2123930373}
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -2513,6 +2505,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2123930373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123930370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7506a7e6d3f2f4ba45e4ece9945257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 765357cd235197340a045dde7f2a810a, type: 2}
 --- !u!1 &2139700344
 GameObject:
   m_ObjectHideFlags: 0
