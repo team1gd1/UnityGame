@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             //Jumplimit = 0;
         }
         if (col.gameObject.tag == "Limit")
-        {
+        { 
             animator.SetTrigger("Die");
             rb.velocity = (new Vector2(0, JumpHeight));
             //DestroyedVoice.PlayOneShot(DestroyedBGM);

@@ -6,29 +6,33 @@ using UnityEngine.UI;
 
 public class PlayerGrow : MonoBehaviour
 {
-
+    Vector3 playerScale;
     public Slider playerSize;
     public float startingSize = 100;
     public float currentSize;
     public GameObject player;
     public float pixelsPerUnit;
 
+
     // Start is called before the first frame update
     void Start()
     {
         currentSize = startingSize;
-        Instantiate(player);
+        player = gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        grow();
+       
+       grow();
     }
 
     void grow()
     {
         currentSize = player.gameObject.GetComponent<PlayerHealth>().currentHealth;
-        player.transform.localScale = new Vector3(currentSize, currentSize);
+      
+        player.transform.localScale = new Vector3(currentSize * Time.deltaTime, currentSize * Time.deltaTime);
+        
     }
 }
