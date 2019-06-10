@@ -774,12 +774,12 @@ PrefabInstance:
     - target: {fileID: 5924634126404742836, guid: a90858ae43ee13d4a939a2d9d38a6530,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.67
+      value: -2.63
       objectReference: {fileID: 0}
     - target: {fileID: 5924634126404742836, guid: a90858ae43ee13d4a939a2d9d38a6530,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.82
+      value: -1.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90858ae43ee13d4a939a2d9d38a6530, type: 3}
@@ -854,6 +854,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: rayGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970252742631609827, guid: 3a589af6c5ad63a439aaa6d492795cdf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970252742631609827, guid: 3a589af6c5ad63a439aaa6d492795cdf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a589af6c5ad63a439aaa6d492795cdf, type: 3}
@@ -1105,7 +1115,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05057913, y: 0.044256687}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1116,7 +1126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7, y: 1.89}
+  m_Size: {x: 1.5988418, y: 1.7256179}
   m_EdgeRadius: 0
 --- !u!95 &643768144
 Animator:
@@ -1521,8 +1531,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -297472805
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 23d7e2d7e9101f04db1eedfc0d14977d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
