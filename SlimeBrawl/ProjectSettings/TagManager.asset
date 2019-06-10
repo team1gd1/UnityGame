@@ -8,6 +8,8 @@ TagManager:
   - PlatSpot
   - Shrinking
   - Weapon
+  - rayGun
+  - Axe
   layers:
   - Default
   - TransparentFX
