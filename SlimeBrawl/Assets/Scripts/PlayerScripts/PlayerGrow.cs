@@ -19,6 +19,8 @@ public class PlayerGrow : MonoBehaviour
     {
         currentSize = startingSize;
         player = gameObject;
+        currentSize = player.gameObject.GetComponent<PlayerHealth>().currentHealth;
+       // player.transform.localScale = new Vector3(currentSize, currentSize);
     }
 
     // Update is called once per frame
@@ -30,9 +32,12 @@ public class PlayerGrow : MonoBehaviour
 
     void grow()
     {
-        currentSize = player.gameObject.GetComponent<PlayerHealth>().currentHealth;
-      
-        player.transform.localScale = new Vector3(currentSize * Time.deltaTime, currentSize * Time.deltaTime);
+      currentSize = player.gameObject.GetComponent<PlayerHealth>().currentHealth;
+      if (player.transform.localScale.x >= currentSize/50)
+        {
+            player.transform.localScale = player.transform.localScale - new Vector3(currentSize/100 * Time.deltaTime, currentSize/100 * Time.deltaTime);
+        }
+     
         
     }
 }
