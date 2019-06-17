@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour
 {
     private Animator Anim;
     private bool isAttacking;
+    public bool isPlayer2;
     //private bool isIdle;
 
     // Start is called before the first frame update
@@ -25,11 +26,17 @@ public class Attack : MonoBehaviour
 
     void playerAttack()
     {
-        if (Input.GetKeyDown("f") && isAttacking == false)
+        if (Input.GetKeyDown("f") && isAttacking == false && isPlayer2 != true)
         {
             isAttacking = true;
             Anim.SetBool("isAttacking", isAttacking);
             
+        }
+
+        if (Input.GetKeyDown("m") && isAttacking == false && isPlayer2 == true)
+        {
+            isAttacking = true;
+            Anim.SetBool("isAttacking", isAttacking);
         }
     }
 
