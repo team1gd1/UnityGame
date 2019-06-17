@@ -7,6 +7,9 @@ public class Attack : MonoBehaviour
     private Animator Anim;
     private bool isAttacking;
     public bool isPlayer2;
+
+    public playerManager manager;
+
     //private bool isIdle;
 
     // Start is called before the first frame update
