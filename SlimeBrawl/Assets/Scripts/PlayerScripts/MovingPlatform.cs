@@ -7,7 +7,7 @@
   (c) 2018 Media Design School
 
   File Name   :   MovingPlatform.cs
-  Description :   fucntions that manage moving platform in the levels
+  Description :   fucntions that manage moving platforms in the levels
   Author      :   Sakyawira Nanda Ruslim
   Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
 ********************/
