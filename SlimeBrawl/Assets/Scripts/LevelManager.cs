@@ -1,4 +1,17 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   LevelManager.cs
+  Description :   manage level transitions and main menu ui
+  Author      :   Sakyawira Nanda Ruslim
+  Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+********************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

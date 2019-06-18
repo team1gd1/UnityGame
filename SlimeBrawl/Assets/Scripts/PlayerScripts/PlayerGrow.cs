@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   PlayerGrow.cs
+  Description :   contain fuctions that manage player character's size changes according to it's health changes
+  Author      :   Sakyawira Nanda Ruslim, Jacob van Asch
+  Mail        :   Sakyawira.Rus8080@mediadesign.school.nz, Jacob.van8310@mediadesign.school.nz
+********************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

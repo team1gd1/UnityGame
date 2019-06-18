@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   Attack.cs
+  Description :   manage attack system of the players
+  Author      :   Thomas Heeley
+  Mail        :   Thomas.Hee8396@mediadesign.school.nz
+********************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

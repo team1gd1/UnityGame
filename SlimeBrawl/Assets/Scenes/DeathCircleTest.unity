@@ -2532,7 +2532,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31739545, y: 0}
+  m_Offset: {x: -0.032687753, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2543,7 +2543,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6282516, y: 1.89}
+  m_Size: {x: 1.4858978, y: 1.89}
   m_EdgeRadius: 0
 --- !u!50 &1893465591
 Rigidbody2D:
@@ -2811,12 +2811,12 @@ PrefabInstance:
     - target: {fileID: 981914485447266809, guid: 55c2cb90450590c40a904a72ee7da479,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 981914485447266809, guid: 55c2cb90450590c40a904a72ee7da479,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 981914485447266809, guid: 55c2cb90450590c40a904a72ee7da479,
         type: 3}
@@ -2858,6 +2858,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
       objectReference: {fileID: 0}
+    - target: {fileID: 981914486599584259, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 981914484913271130, guid: 55c2cb90450590c40a904a72ee7da479,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2882,6 +2887,42 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 981914486599584258, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 981914486599584258, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 981914485447266815, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 981914486599584256, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 981914486599584256, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f29cefb0ef780ca45b600765eab97a4a,
+        type: 3}
+    - target: {fileID: 981914486599584256, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490993593060193931, guid: 55c2cb90450590c40a904a72ee7da479,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.50980395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55c2cb90450590c40a904a72ee7da479, type: 3}

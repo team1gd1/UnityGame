@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   MovingPlatform.cs
+  Description :   fucntions that manage moving platform in the levels
+  Author      :   Sakyawira Nanda Ruslim
+  Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+********************/
+
+using UnityEngine;
 using System.Collections;
 
 public class MovingPlatform : MonoBehaviour

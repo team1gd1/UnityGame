@@ -1,4 +1,17 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   CircleOfDeath.h
+  Description :   contains function to create a shrinking circle that does damage to the player
+  Author      :   Sakyawira Nanda Ruslim
+  Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+********************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
