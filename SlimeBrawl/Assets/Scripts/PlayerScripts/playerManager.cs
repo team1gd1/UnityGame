@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   playerManager.cs
+  Description :   manage the changes of player sprites 
+  Author      :   Thomas Heeley
+  Mail        :   Thomas.Hee8396@mediadesign.school.nz
+********************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +24,8 @@ public class playerManager : MonoBehaviour
     public Sprite axeSprite;
     public Sprite rayGunSprite;
     public Animator m_anim;
-    bool m_axeBool;
-    bool m_rayGunBool;
+    public bool m_axeBool;
+    public bool m_rayGunBool;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +77,17 @@ public class playerManager : MonoBehaviour
             m_anim.SetBool("isAxe", false);
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision collision)
+    {
+        if (m_axeBool == true)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerHealth>().currentHealth -= 5;
+            }
+        }
     }
 
 }
