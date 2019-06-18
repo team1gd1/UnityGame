@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   playerManager.cs
+  Description :   manage the changes of player sprites 
+  Author      :   Thomas Heeley
+  Mail        :   Thomas.Hee8396@mediadesign.school.nz
+********************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
