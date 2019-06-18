@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   GrowingPlatform.cs
+  Description :   make a platform bigger as the game goes on
+  Author      :   Sakyawira Nanda Ruslim
+  Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+********************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

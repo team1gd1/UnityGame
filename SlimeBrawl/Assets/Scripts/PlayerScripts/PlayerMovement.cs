@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿/***********************
+  Bachelor of Software Engineering
+  Media Design School
+  Auckland
+  New Zealand
+
+  (c) 2018 Media Design School
+
+  File Name   :   PlayerMovements.cs
+  Description :   contain fuctions that manage player character's size changes according to it's health changes
+  Author      :   Sakyawira Nanda Ruslim, Thomas Heeley, Jacob van Asch
+  Mail        :   Sakyawira.Rus8080@mediadesign.school.nz, Jacob.van8310@mediadesign.school.nz, Thomas.Hee8396@mediadesign.school.nz
+********************/
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -85,13 +99,13 @@ public class PlayerMovement : MonoBehaviour
             if (isleft == true)
             {
                 transform.Rotate(new Vector3(0, 180, 0));
-                isleft = false; 
+                isleft = false;
             }
             animator.SetFloat("Walk", 0.2f);
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
-        else if (Input.GetKey(KeyCode.LeftArrow) && isPlayer2 || Input.GetKey(KeyCode.A)  && !isPlayer2)
+        else if (Input.GetKey(KeyCode.LeftArrow) && isPlayer2 || Input.GetKey(KeyCode.A) && !isPlayer2)
         {
             if (isleft == false)
             {
