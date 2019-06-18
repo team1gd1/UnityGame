@@ -10,8 +10,8 @@ public class playerManager : MonoBehaviour
     public Sprite axeSprite;
     public Sprite rayGunSprite;
     public Animator m_anim;
-    bool m_axeBool;
-    bool m_rayGunBool;
+    public bool m_axeBool;
+    public bool m_rayGunBool;
 
     // Start is called before the first frame update
     void Start()

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    public Transform firePoint;
     private Animator Anim;
     private bool isAttacking;
     public bool isPlayer2;
-
+    public GameObject buletPrefab;
     public playerManager manager;
 
     //private bool isIdle;
@@ -16,6 +17,8 @@ public class Attack : MonoBehaviour
     void Start()
     {
         Anim = GetComponent<Animator>();
+        manager = GetComponent<playerManager>();
+
         isAttacking = false;
     }
 
@@ -23,8 +26,6 @@ public class Attack : MonoBehaviour
     void Update()
     {
         playerAttack();
-        //EndAttack();
-       // Anim.SetBool("isIdle", isIdle);
     }
 
     void playerAttack()
@@ -33,13 +34,24 @@ public class Attack : MonoBehaviour
         {
             isAttacking = true;
             Anim.SetBool("isAttacking", isAttacking);
-            
+
+            if (manager.m_rayGunBool == true)
+            {
+                Instantiate(buletPrefab, firePoint.position, firePoint.rotation);
+            }
+
         }
 
         if (Input.GetKeyDown("m") && isAttacking == false && isPlayer2 == true)
         {
             isAttacking = true;
+
             Anim.SetBool("isAttacking", isAttacking);
+
+            if (manager.m_rayGunBool == true)
+            {
+                Instantiate(buletPrefab, firePoint.position, firePoint.rotation);
+            }
         }
     }
 
