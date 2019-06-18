@@ -79,4 +79,15 @@ public class playerManager : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision collision)
+    {
+        if (m_axeBool == true)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerHealth>().currentHealth -= 5;
+            }
+        }
+    }
+
 }
